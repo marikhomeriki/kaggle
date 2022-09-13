@@ -19,6 +19,11 @@ def hand_total(hand):
     return total
 
 
+def blackjack_hand_greater_than(hand_1, hand_2):
+    total_1 = hand_total(hand_1)
+    total_2 = hand_total(hand_2)
+
+
 hand = 'A', 'A', 'J', '6'
 score = hand_total(hand)
 print(score)
