@@ -18,5 +18,3 @@ print(int(1*0.5))
 print(1 // 2)
 x = 10 // 3
 print(f"This is {x}")
-
-print(litres2(time))
