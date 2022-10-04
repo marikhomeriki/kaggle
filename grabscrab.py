@@ -16,7 +16,14 @@ def grabscrab(word, possible_words):
     return result
 
 
-word = "ilfe"
+word = "ortsp"
 
-possible_words = ["make", ]
+possible_words = ["sport", "parrot", "ports", "matey"]
 print(grabscrab(word, possible_words))
+
+
+def grabscrab1(word, possible_words):
+    return [w for w in possible_words if sorted(word) == sorted(w)]
+
+
+print(grabscrab1(word, possible_words))
