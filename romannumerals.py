@@ -9,13 +9,11 @@ def roman_to_int(roman):
         "M": 1000
     }
     result = 0
-
     for i in range(len(roman)):
         if i > 0 and ROMANS[roman[i]] > ROMANS[roman[i-1]]:
             result += ROMANS[roman[i]] - 2*ROMANS[roman[i-1]]
         else:
             result += ROMANS[roman[i]]
-
     return result
 
 
