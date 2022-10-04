@@ -18,5 +18,7 @@ def roman_to_int(roman):
 
 
 roman = 'XLVIII'
+roman1 = 'XL'
 
 print(roman_to_int(roman))
+print(roman_to_int(roman1))
