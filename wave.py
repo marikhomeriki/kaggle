@@ -3,10 +3,10 @@ def wave(people):
     word = ''
     size = len(people)
     for i in range(size):
-
         c = people[i].upper()
         word = word + c + people[i+1:]
-        result.append(word)
+        if people[i] != " ":
+            result.append(word)
         word = word[0:i+1].lower()
     print(result)
 
