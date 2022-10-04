@@ -1,11 +1,22 @@
 def grabscrab(word, possible_words):
-    for c in word:
-        print('test')
 
-    return []
+    count = 0
+    result = []
+
+    for i in range(len(possible_words)):
+        for c in word:
+            if len(word) != len(possible_words[i]):
+                continue
+            if word.count(c) == possible_words[i].count(c):
+                count += 1
+                if count == len(possible_words[i]):
+                    count = 0
+                    result.append(possible_words[i])
+
+    return result
 
 
-word = "ortsp",
-print(word.count('o'))
-possible_words = ["sport", "parrot", "ports", "matey"]
-grabscrab(word, possible_words)
+word = "ilfe"
+
+possible_words = ["make", ]
+print(grabscrab(word, possible_words))
