@@ -43,3 +43,11 @@ def grabscrab2(word, possible_words):
 
 
 print(grabscrab2(word, possible_words))
+
+
+def grabscrab3(word, possible_words):
+    words = Counter(word)
+    return [w for w in possible_words if Counter(w) == words]
+
+
+print(grabscrab3(word, possible_words))
