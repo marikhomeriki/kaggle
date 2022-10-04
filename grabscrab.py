@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 def grabscrab(word, possible_words):
 
     count = 0
@@ -27,3 +30,16 @@ def grabscrab1(word, possible_words):
 
 
 print(grabscrab1(word, possible_words))
+
+
+def grabscrab2(word, possible_words):
+    words = Counter(word)
+    results = []
+
+    for s in possible_words:
+        if Counter(s) == words:
+            results.append(s)
+    return results
+
+
+print(grabscrab2(word, possible_words))
