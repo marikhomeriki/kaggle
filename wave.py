@@ -1,3 +1,6 @@
+from curses.ascii import isalpha
+
+
 def wave(people):
     result = []
     word = ''
@@ -7,10 +10,16 @@ def wave(people):
         word = word + c + people[i+1:]
         if people[i] != " ":
             result.append(word)
-        word = word[0:i+1].lower()
-    print(result)
+        word = word[:i+1].lower()
+    return result
 
 
 people = "Two words"
+print(people[0:0])
 
-wave(people)
+
+def wave1(people):
+    return [people[0:i] + people[i].upper() + people[i+1:] for i in range(len(people)) if people[i].isalpha()]
+
+
+print(wave1(people))
