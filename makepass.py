@@ -3,7 +3,6 @@ def make_password(phrase):
     password = ''
     for word in words:
         if word[0] in ("i", "o", "s", "I", "O", "S"):
-            print("test")
             password = password + word[0].lower()
         else:
             password = password + word[0]
