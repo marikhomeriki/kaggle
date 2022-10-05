@@ -4,3 +4,8 @@ class Person:
         self.name = name
         self.age = age
         self.info = f"{name}s age is {age}"
+
+
+per = Person('Mari', 31)
+
+print(per.info)
