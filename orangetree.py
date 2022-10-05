@@ -21,13 +21,12 @@ class OrangeTree:
             self.height += 1
 
         if not self.dead:
-            self.fruit = 100
+            if self.age > 5 and self.age < 10:
+                self.fruit = 100
+            elif self.age < 15:
+                self.fruit = 200
+            else:
+                self.fruit = 0
 
-
-orange = OrangeTree(0, 0, 0, False)
-
-print(orange.one_year_passes())
-
-print(orange.age)
-print(orange.height)
-print(orange.dead)
+    def pick_fruit(self):
+        self.fruit -= 1
