@@ -1,19 +1,13 @@
 def queue_time(customers, n):
-    sum = 0
-    if len(customers) == 0:
-        return 0
-    elif len(customers) == 1:
-        return customers[0]
+    queue = [0] * n
+    for i in customers:
+        queue.sort()
+        queue[0] += i
 
-    if n == 1:
-        for i in range(len(customers)):
-            sum += customers[i]
-        return sum
-    if n > len(customers):
-        return sorted(customers)[len(customers)-1]
+    return max(queue)
 
 
-customers = [2, 2, 3, 3, 4, 4]
+customers = [10, 2, 3, 3]
 n = 2
 
 print(queue_time(customers, n))
