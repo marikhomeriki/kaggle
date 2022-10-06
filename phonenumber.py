@@ -1,6 +1,6 @@
 def create_phone_number(numbers):
     a = "".join(map(str, numbers))
-    number = '(' + a[0:3] + ')'+'-' + a[3:6] + '-' + a[6:]
+    number = '(' + a[0:3] + ')' + ' ' + a[3:6] + '-' + a[6:]
     return number
 
 
