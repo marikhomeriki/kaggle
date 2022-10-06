@@ -7,7 +7,7 @@ def queue_time(customers, n):
     return max(queue)
 
 
-customers = [10, 2, 3, 3]
+customers = [10, 2, 3, 3, 3]
 n = 2
 
 print(queue_time(customers, n))
