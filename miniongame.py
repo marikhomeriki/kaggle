@@ -1,31 +1,17 @@
-import collections
-from itertools import count
-
 
 def minion_game(string):
 
-    if string[0] in ['a', 'e', 'i', 'o', 'u']:
-        i = string.index(s)
-        word1 = string[i:]
-    else:
-        word2 = string
+    word_a = string[first_vowel(string):]
+    word_b = string[first_not_vowel(string):]
 
-    x = count_scores(word1)
-    print(x)
+    a = all_words_a(word_a)
+    b = all_words_b(word_b)
 
 
-def count_scores(word):
-    score = 0
-    for i in range(1, len(word)+1):
-        k_words = k_words + word[0:i]
-        s_count = word_count(word, k_words)
-        kevin += s_count
-        k_words = ''
-
-    return score
+word = "banana"
 
 
-def word_count(string, word):
+def score_count(string, word):
     score = 0
     for i in range(len(string)):
         index = string.find(word)
@@ -34,6 +20,47 @@ def word_count(string, word):
             string = string[index+1:]
 
     return score
+
+
+def get_words(word):
+    b_words = []
+    sub_words = ''
+    for i in range(1, len(word)+1):
+        sub_words = sub_words + word[0:i]
+        b_words.append(sub_words)
+        sub_words = ''
+    return b_words
+
+
+print(get_words(word))
+
+
+def all_words_b(word):
+    words_b = set()
+    for s in word:
+        if s not in ['a', 'e', 'i', 'o', 'u']:
+            words_b.add(word[word.find(s):])
+    return words_b
+
+
+def all_words_a(word):
+    words_a = set()
+    for s in word:
+        if s in ['a', 'e', 'i', 'o', 'u']:
+            words_a.add(word[word.find(s):])
+    return words_a
+
+
+def first_vowel(s):
+    for index, char in enumerate(s):
+        if char in 'aeiou':
+            return index
+
+
+def first_not_vowel(s):
+    for index, char in enumerate(s):
+        if char not in 'aeiou':
+            return index
 
 
 def word_count1(string, word):
@@ -47,7 +74,4 @@ def word_count1(string, word):
             return count
 
 
-string = "banana"
-
-print(minion_game(string))
-# print(word_count(string, "anana"))
+print(minion_game(word))
