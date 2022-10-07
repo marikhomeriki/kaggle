@@ -24,6 +24,8 @@ def minion_game(string):
         for j in range(len(words_b[i])):
             s_score = s_score + score_count(string, words_b[i][j])
 
+    print(s_score)
+
     for i in range(len(words_a)):
         for j in range(len(words_a[i])):
             k_score = k_score + score_count(string, words_a[i][j])
@@ -95,5 +97,5 @@ def word_count1(string, word):
             return count
 
 
-word = "BANANA"
+word = "BAANANAS"
 print(minion_game(word))
