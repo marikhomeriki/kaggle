@@ -3,30 +3,26 @@ from itertools import count
 
 
 def minion_game(string):
-    kevin = 0
-    word = ''
-    k_words = ""
-    for s in string:
-        if s in ['a', 'e', 'i', 'o', 'u']:
-            i = string.index(s)
-            word = string[i:]
 
-    for i in range(len(word)+1):
+    if string[0] in ['a', 'e', 'i', 'o', 'u']:
+        i = string.index(s)
+        word1 = string[i:]
+    else:
+        word2 = string
+
+    x = count_scores(word1)
+    print(x)
+
+
+def count_scores(word):
+    score = 0
+    for i in range(1, len(word)+1):
         k_words = k_words + word[0:i]
-
-        print(k_words)
+        s_count = word_count(word, k_words)
+        kevin += s_count
         k_words = ''
 
-
-def word_count1(string, word):
-    count = 0
-    start = 0
-    while True:
-        start = string.find(word, start) + 1
-        if start > 0:
-            count += 1
-        else:
-            return count
+    return score
 
 
 def word_count(string, word):
@@ -40,7 +36,18 @@ def word_count(string, word):
     return score
 
 
-string = "ananana"
+def word_count1(string, word):
+    count = 0
+    start = 0
+    while True:
+        start = string.find(word, start) + 1
+        if start > 0:
+            count += 1
+        else:
+            return count
 
-# minion_game(string)
-word_count(string, "ana")
+
+string = "banana"
+
+print(minion_game(string))
+# print(word_count(string, "anana"))
