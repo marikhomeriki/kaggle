@@ -18,20 +18,29 @@ def minion_game(string):
         k_words = ''
 
 
-def word_count(string, word):
+def word_count1(string, word):
     count = 0
     start = 0
     while True:
-        print(f"This is find: {string.find(word, start)}")
         start = string.find(word, start) + 1
-        print(f"This is start: {start}")
         if start > 0:
             count += 1
         else:
             return count
 
 
-string = "anana"
+def word_count(string, word):
+    score = 0
+    for i in range(len(string)):
+        index = string.find(word)
+        if index > -1:
+            score += 1
+            string = string[index+1:]
+
+    return score
+
+
+string = "ananana"
 
 # minion_game(string)
-print(word_count(string, "ana"))
+word_count(string, "ana")
